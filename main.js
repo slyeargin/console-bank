@@ -2,7 +2,9 @@ var balance = 1000;
 var response = query();
 
 while(!isQuit(response)){
-  var x = getInput();
+  if ( response === "d" || response === "w") {
+    var x = getInput();
+  }
 
   switch(response){
   case 'd':
@@ -17,6 +19,8 @@ while(!isQuit(response)){
     break;
   default:
     console.log('That was not a valid option. Please try again.');
+    response = query();
+    continue;
   }
 
   var string = getString(x,balance,operation,adverb);

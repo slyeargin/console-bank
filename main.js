@@ -7,17 +7,19 @@ while(!isQuit(response)){
   switch(response){
   case 'd':
     balance = add(x,balance);
-    operation = "deposited into";
+    operation = "deposited";
+    adverb = "to";
     break;
   case 'w':
     balance = sub(x,balance);
-    operation = "withdrawn from";
+    operation = "withdrew";
+    adverb = "from";
     break;
   default:
     console.log('That was not a valid option. Please try again.');
   }
 
-  var string = getString(x,balance,operation);
+  var string = getString(x,balance,operation,adverb);
   console.log(string);
   response = query();
 }
@@ -61,6 +63,6 @@ function sub(x, balance) {
   return balance;
 }
 
-function getString(x,balance,operation) {
-  return "$" + x + " has been " + operation + " your account.  Your balance is $" + balance + ".";
+function getString(x,balance,operation,adverb) {
+  return "You " + operation + " $" + x + " " + adverb + " your account.  Your balance is $" + balance + ".";
 }

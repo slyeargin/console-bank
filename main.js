@@ -27,7 +27,6 @@ while(!isQuit(response)){
 console.log("Thanks for banking with us!")
 
 function query() {
-  console.log("Your balance is $" + balance + ".");
   if (balance < -750) {
     console.log('Your account has been closed.');
     return response = 'q';
